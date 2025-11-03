@@ -1,44 +1,50 @@
-.NavBar{
-    width: 100vw;
-    height: calc(100% - 93%);
-    display: flex;
-    /* justify-content: center; */
-    gap: calc(100% - 95%);
-    padding: calc(100% - 99%) calc(100% - 99%);
-    margin: auto;
-    border-bottom: 1px solid rgb(31, 8, 48);
+.NavBar {
+  width: 100vw;
+  /* height: calc(100% - 93%); */
+  display: flex;
+  justify-content: space-between;
+  padding: calc(100% - 99%) calc(100% - 99%);
+  margin: auto;
+  border-bottom: 1px solid rgb(31, 8, 48);
 }
-p{
-    font-size: 30px;
-    font-weight: 500;
+.NavBar1 {
+  margin-left: 10px;
+  display: flex;
+  gap: 40px;
 }
-ul{
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    /* list-style-type: none; */
+p {
+  font-size: 30px;
+  font-weight: 500;
 }
-a{
- text-decoration: none;
- cursor: pointer;
- width: 90px;
- justify-content: center;
- align-items: center;
+ul {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  /* list-style-type: none; */
 }
-.form{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+a {
+  margin-top: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  width: 90px;
+  justify-content: center;
+  align-items: center;
 }
-#Search{
-    height: 30px;
-    width: calc(100% - 30%);
-    margin: 0 5px 0 0 ;
-    padding: 5px;
+.form {
+  display: flex;
+  justify-content: center;
+  /* width: 100%; */
 }
-#Searchbtn{
-    height: 30px;
-    width: calc(100% - 85%);
-    margin:  0 5px 0 0;
-    cursor: pointer;
+#Search {
+  height: 30px;
+  width: 200px;
+  margin: 0 5px 0 0;
+  padding: 5px;
+}
+#Searchbtn {
+  height: 30px;
+  width: 50px;
+  margin: 0 5px 0 0;
+  cursor: pointer;
 }
