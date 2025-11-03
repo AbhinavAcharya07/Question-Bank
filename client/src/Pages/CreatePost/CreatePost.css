@@ -1,0 +1,44 @@
+.Post{
+overflow: hidden;
+width: 100vw;
+max-width: 80%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+margin: 10px auto;
+}
+.Post form{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+width: 90vw;
+max-width: 60rem;
+padding: 20px;
+}
+.topic,.question,.answer{
+    font-size: medium;
+    width: 100%;
+    max-width: 40rem;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    background: rgb(184, 168, 168);
+}
+.submitWhite{
+cursor: pointer;
+height: 50px;
+width: 120px;
+font-size: 25px;
+font-weight: 650;
+padding: 5px 10px;
+border: none;
+border-radius: 1.25rem;
+margin: 12px;
+background: rgb(184, 168, 168);
+}
