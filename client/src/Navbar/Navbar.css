@@ -1,0 +1,44 @@
+.NavBar{
+    width: 100vw;
+    height: calc(100% - 93%);
+    display: flex;
+    /* justify-content: center; */
+    gap: calc(100% - 95%);
+    padding: calc(100% - 99%) calc(100% - 99%);
+    margin: auto;
+    border-bottom: 1px solid rgb(31, 8, 48);
+}
+p{
+    font-size: 30px;
+    font-weight: 500;
+}
+ul{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    /* list-style-type: none; */
+}
+a{
+ text-decoration: none;
+ cursor: pointer;
+ width: 90px;
+ justify-content: center;
+ align-items: center;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#Search{
+    height: 30px;
+    width: calc(100% - 30%);
+    margin: 0 5px 0 0 ;
+    padding: 5px;
+}
+#Searchbtn{
+    height: 30px;
+    width: calc(100% - 85%);
+    margin:  0 5px 0 0;
+    cursor: pointer;
+}

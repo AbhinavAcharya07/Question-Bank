@@ -1,7 +1,19 @@
 import React from "react";
 import "./Navbar.css";
 const Navbar = () => {
-  return <div>Navbar</div>;
+  return (
+    <div className="NavBar">
+      <p>Brand</p>
+      <ul>
+        <a href="">Home</a>
+        <a href="">CreatePost</a>
+      </ul>
+      <form className="form" action="">
+        <input id="Search" type="text" />
+        <button id="Searchbtn">Search</button>
+      </form>
+    </div>
+  );
 };
 
 export default Navbar;
