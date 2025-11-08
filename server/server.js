@@ -4,6 +4,7 @@ import CreatePost from "./Routes/Post.Route.js"
 import { connectionWithMongoose } from "./db/connection1.db.js";
 const app = express();
 connectionWithMongoose();
+app.use(express.json())
 app.use('/api',CreatePost);
 
 
