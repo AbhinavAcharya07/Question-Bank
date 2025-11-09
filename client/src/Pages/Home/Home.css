@@ -1,6 +1,7 @@
 .Main {
     justify-content: center;
     text-align: center;
+    color: black;
 }
 .card-grid {
   display: grid;
