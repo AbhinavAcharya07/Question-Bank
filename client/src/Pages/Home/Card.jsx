@@ -1,10 +1,11 @@
 import React from "react";
 import "./Card.css";
-const Card = () => {
+const Card = ({ post }) => {
   return (
     <div className="card">
-      <h2>hi</h2>
-      <p>hi welcome there </p>
+      <h2>{post?.topic}</h2>
+      <p>{post?.question} </p>
+      <p>{post?.answer} </p>
     </div>
   );
 };
