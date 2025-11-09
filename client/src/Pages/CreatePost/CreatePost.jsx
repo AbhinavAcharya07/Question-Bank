@@ -2,18 +2,30 @@ import React from "react";
 import "./CreatePost.css";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const CreatePost = () => {
   const [topic, setTopic] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await axios.post("http://localhost:8001/api/createpost", {
-      topic,
-      question,
-      answer,
-    });
+    try {
+      e.preventDefault();
+      const response = await axios.post(
+        "http://localhost:8001/api/createpost",
+        {
+          topic,
+          question,
+          answer,
+        }
+      );
+      if (response?.data.responseData) {
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
     console.log(response);
   };
   return (
