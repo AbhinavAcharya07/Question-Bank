@@ -1,26 +1,60 @@
 import React from "react";
 import "./CreatePost.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const CreatePost = () => {
   const [topic, setTopic] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
+  const { postId } = useParams();
+
+  const getPost = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8001/api/getsinglepost?postId=${postId}`
+      );
+      const post = response.data.responseData;
+      setTopic(post?.topic);
+      setQuestion(post?.question);
+      setAnswer(post?.answer);
+      console.log(post?.topic);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getPost();
+  }, []);
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const response = await axios.post(
-        "http://localhost:8001/api/createpost",
-        {
-          topic,
-          question,
-          answer,
+      if (postId) {
+        const response = await axios.put(
+          "http://localhost:8001/api/updatepost",
+          {
+            postId,
+            topic,
+            question,
+            answer,
+          }
+        );
+        if (response?.data.responseData) {
+          navigate(`/singlepost/${postId}`);
         }
-      );
-      if (response?.data.responseData) {
-        navigate("/");
+      } else {
+        const response = await axios.post(
+          "http://localhost:8001/api/createpost",
+          {
+            topic,
+            question,
+            answer,
+          }
+        );
+        if (response?.data.responseData) {
+          navigate("/");
+        }
       }
     } catch (error) {
       console.log(error);
@@ -37,6 +71,7 @@ const CreatePost = () => {
             type="text"
             className="topic"
             placeholder="Topic"
+            value={topic}
             onChange={(e) => {
               setTopic(e.target.value);
             }}
@@ -45,6 +80,7 @@ const CreatePost = () => {
             type="text"
             className="question"
             placeholder="Question"
+            value={question}
             onChange={(e) => {
               setQuestion(e.target.value);
             }}
@@ -53,13 +89,14 @@ const CreatePost = () => {
             className="answer"
             rows="5"
             placeholder="Answer"
+            value={answer}
             onChange={(e) => {
               setAnswer(e.target.value);
             }}
           ></textarea>
           <div>
             <button type="submit" value="Send" className="submitWhite">
-              Submit
+              {postId ? "Update" : "Submit"}
             </button>
           </div>
         </form>

@@ -49,7 +49,12 @@ const SinglePost = () => {
           <button id="deletebtn" onClick={deletePost}>
             Delete
           </button>
-          <button id="editbtn">Edit</button>
+          <button
+            id="editbtn"
+            onClick={() => navigate(`/updatepost/${postId}`)}
+          >
+            Edit
+          </button>
         </div>
       </div>
     </div>
