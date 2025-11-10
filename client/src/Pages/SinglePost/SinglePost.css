@@ -1,0 +1,35 @@
+.singlePost-Container{
+     display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px; /* Space between the cards */
+    max-width: 800px;
+    margin: 20px auto;
+}
+.singlePost-Card{
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white for the cards */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: left;
+  color: black;
+}
+.singlePost-Card p{
+    font-size: medium;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#deletebtn{
+    width: 60px;;
+    height: 30px;
+    margin: auto 5px;
+    cursor: pointer;
+}
+#editbtn{
+    width: 60px;;
+    height: 30px;
+    margin: auto 5px;
+    cursor: pointer;
+}

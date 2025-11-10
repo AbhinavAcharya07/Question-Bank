@@ -8,5 +8,5 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px; /* Space between the cards */
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-// import "/SinglePost.css";
+import "./SinglePost.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -22,10 +22,16 @@ const SinglePost = () => {
     getPost();
   }, []);
   return (
-    <div>
-      <h1>{post?.topic}</h1>
-      <h2>{post?.question}</h2>
-      <p>{post?.answer}</p>
+    <div className="singlePost-Container">
+      <div className="singlePost-Card">
+        <h1>{post?.topic}</h1>
+        <h2>{post?.question}</h2>
+        <p>{post?.answer}</p>
+        <div className="buttons">
+          <button id="deletebtn">Delete</button>
+          <button id="editbtn">Edit</button>
+        </div>
+      </div>
     </div>
   );
 };
