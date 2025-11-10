@@ -3,6 +3,7 @@ import Navbar from "./Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import CreatePost from "./Pages/CreatePost/CreatePost";
 import { Route, Routes } from "react-router-dom";
+import SinglePost from "./Pages/SinglePost/SinglePost";
 
 const App = () => {
   return (
@@ -11,6 +12,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/createPost" element={<CreatePost />}></Route>
+        <Route
+          path="/singlepost/:postId"
+          element={<SinglePost></SinglePost>}
+        ></Route>
       </Routes>
     </div>
   );
