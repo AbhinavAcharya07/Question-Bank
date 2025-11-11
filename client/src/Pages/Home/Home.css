@@ -1,12 +1,21 @@
 .Main {
+  display: flex;
+  flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     color: black;
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
+  /* aspect-ratio: 1/1; */
   gap: 20px; /* Space between the cards */
-    max-width: 800px;
-    margin: 20px auto;
+    min-height:300px;
+    max-width: 1000px;
+    margin: 20px 0px;
+    
+}
+.card-skelton{
+  background-color: #ccc;
 }

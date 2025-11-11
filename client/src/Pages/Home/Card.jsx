@@ -11,10 +11,12 @@ const Card = ({ post }) => {
         navigate(`/singlepost/${post?._id}`);
       }}
     >
-      <h2 className="card-topic">{post?.topic}</h2>
+      <div className="cardH2">
+        <h2 className="card-topic">{post?.topic}</h2>
+      </div>
       <div className="card-content">
-        <p className="card-question">{post?.question} </p>
-        <p className="card-answer">{post?.answer} </p>
+        <p className="card-question">{post?.question}</p>
+        <p className="card-answer">{post?.answer}</p>
       </div>
     </div>
   );

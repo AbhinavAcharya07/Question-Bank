@@ -2,15 +2,18 @@
   width: 100vw;
   /* height: calc(100% - 93%); */
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: calc(100% - 99%) calc(100% - 99%);
+  /* padding: calc(100% - 99%) calc(100% - 99%); */
+  padding: 10px 20px;
+  padding: min(1.25rem, 5%) max(7%, 5%, 2%);
   margin: auto;
   border-bottom: 1px solid rgb(31, 8, 48);
 }
 .NavBar1 {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   display: flex;
-  gap: 40px;
+  gap: 10px;
 }
 p {
   font-size: 30px;
@@ -30,6 +33,7 @@ a {
   width: 90px;
   justify-content: center;
   align-items: center;
+  color: black;
 }
 .form {
   display: flex;

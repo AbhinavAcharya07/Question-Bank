@@ -21,6 +21,7 @@ padding: 20px;
 }
 .topic,.question,.answer{
     font-size: medium;
+    height: auto;
     width: 100%;
     max-width: 40rem;
     margin: 0.5rem;

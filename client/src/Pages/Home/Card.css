@@ -10,11 +10,27 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: left;
   color: black;
+  min-height: 300px;
+  min-width: 500px;
 }
-.card-topic {
+.cardH2 {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
   text-align: center;
 }
+.card-topic {
+  margin: 5px 5px;
+  height: auto;
+}
+.card-content {
+  
+  padding: 5px;
+}
 .card-question {
+  margin: 5px;
+  padding: 3px;
+  height: auto;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -23,6 +39,8 @@
   line-clamp: 2;
 }
 .card-answer {
+  margin: 5px;
+  padding: 5px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
