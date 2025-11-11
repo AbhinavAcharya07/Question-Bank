@@ -1,6 +1,29 @@
+.CreatePost{
+    width: 100vw;
+ display: grid;
+ grid-template-columns: 0.8fr 1.4fr 0.8fr ;
+ 
+}
+.LeftSide{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+}
+.RightSide{
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+}
+.Gemini{
+    border: 1px solid rgb(31, 8, 48) ;
+    border-radius: 10px;
+    height: 80vh;
+}
 .Post{
 overflow: hidden;
-width: 100vw;
+/* width: 100vw; */
 max-width: 80%;
 display: flex;
 flex-direction: column;
@@ -15,7 +38,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
-width: 90vw;
+width: 80vw;
 max-width: 60rem;
 padding: 20px;
 }
@@ -23,12 +46,12 @@ padding: 20px;
     font-size: medium;
     height: auto;
     width: 100%;
-    max-width: 40rem;
+    max-width: 30rem;
     margin: 0.5rem;
     padding: 0.5rem 1rem;
     color: black;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0.6rem;
     background: rgb(184, 168, 168);
 }
 .submitWhite{

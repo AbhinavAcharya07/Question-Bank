@@ -1,5 +1,6 @@
 import React from "react";
 import "./CreatePost.css";
+import Gemini from "./Gemini";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -63,7 +64,10 @@ const CreatePost = () => {
     console.log(response);
   };
   return (
-    <>
+    <div className="CreatePost">
+      <div className="LeftSide">
+        <Gemini className="Gemini"></Gemini>
+      </div>
       <div className="Post">
         <h1>Create Post</h1>
         <form className="form" onSubmit={handleSubmit}>
@@ -101,7 +105,10 @@ const CreatePost = () => {
           </div>
         </form>
       </div>
-    </>
+      <div className="RightSide">
+        <Gemini></Gemini>
+      </div>
+    </div>
   );
 };
 
