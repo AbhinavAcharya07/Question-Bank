@@ -1,3 +1,69 @@
-.Gemini p{
-    font-size: small;
+.Gemini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  /* justify-content: space-between; */
+}
+
+.Gemini p {
+  font-size: small;
+}
+/* .InputContainer {
+  position: absolute;
+  right: 5%;
+  bottom: 2%;
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+
+  background-color: white;
+
+  z-index: 10;
+} */
+.InputWrapper {
+  position: absolute;
+  right: 5%;
+  bottom: 2%;
+  display: flex;
+  align-items: flex-end;
+  width: 90%;
+  border: 1px solid rgb(63, 62, 62);
+  border-radius: 25px;
+  padding: 8px 15px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  z-index: 10;
+}
+.dynamicTextArea {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow-y: hidden;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  margin: 0;
+  background-color: transparent;
+  max-height: 150px;
+  min-height: 20px;
+
+  scrollbar-width: none;
+}
+.send-btn {
+  background-color: #374d6b; /* Google Blue */
+  color: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1; /* Helps with alignment of text/icon */
+  transition: opacity 0.2s;
+  cursor: pointer;
 }
