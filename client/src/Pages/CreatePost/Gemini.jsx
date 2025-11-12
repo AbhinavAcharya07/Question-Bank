@@ -1,52 +1,53 @@
 import React from "react";
 import "./Gemini.css";
+import { useState, useEffect } from "react";
+import { GoogleGenAI } from "@google/genai";
+
 const Gemini = () => {
+  const [Askquestion, setAskquestion] = useState("");
+  const [Answer, setAnswer] = useState("");
+  const apiKey = "AIzaSyAjkxaO08jfNnTGNDr3CZ14Ce-tXqRgrhQ";
+  const ai = new GoogleGenAI({
+    apiKey: apiKey,
+  });
+  const SubmitHandler = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: [Askquestion],
+      });
+      setAskquestion("");
+      setAnswer(response.text);
+    } catch (error) {
+      console.error("API Error:", error);
+      setAnswer("Sorry, I encountered an error while fetching the response.");
+    }
+  };
   return (
     <div className="Gemini">
       <div className="PayloadContainer">
-        <p>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, sometimes on purpose (injected humour and the like). There
-          are many variations of passages of Lorem Ipsum available, but the
-          majority have suffered alteration in some form, by injected humour, or
-          randomised words which don't look even slightly believable. If you are
-          going to use a passage of Lorem Ipsum, you need to be sure there isn't
-          anything embarrassing hidden in the middle of text. All the Lorem
-          Ipsum generators on the Internet tend to repeat predefined chunks as
-          necessary, making this the first true generator on the Internet. It
-          uses a dictionary of over 200 Latin words, combined with a handful of
-          model sentence structures, to generate Lorem Ipsum which looks
-          reasonable. The It is a long established fact that a reader will be
-          distracted by the readable content of a page when looking at its
-          layout. The point of using Lorem Ipsum is that it has a more-or-less
-          normal distribution of letters, as opposed to using 'Content here,
-          content here', making it look like readable English. Many desktop
-          publishing packages and web page editors now use Lorem Ipsum as their
-          default model text, and a search for 'lorem ipsum' will uncover many
-          web sites still in their infancy. Various versions have evolved over
-          the years, sometimes by accident, sometimes on purpose (injected
-          humour and the like). reasonable. The It is a long established fact
-          that a reader will be distracted by the readable content of a page
-          when looking at its layout. The point of using Lorem Ipsum is that it
-          has a more-or-less normal distribution of letters, as opposed to using
-          'Content here, content here', making it look like readable English.
-          Many desktop publishing packages and web page editors now use Lorem
-          Ipsum as their default model text, and a search for 'lorem ipsum' will
-          uncover many web sites still in their infancy. Various versions have
-          evolved over the years, sometimes by accident, sometimes on purpose
-          (injected humour and the like).
-        </p>
+        <p>{Answer}</p>
       </div>
       <div className="InputWrapper">
-        <textarea name="" className="dynamicTextArea"></textarea>
-        <button className="send-btn">Ask</button>
+        <textarea
+          name=""
+          className="dynamicTextArea"
+          placeholder="Gemini"
+          onChange={(event) => {
+            setAskquestion(event.target.value);
+          }}
+          value={Askquestion}
+        ></textarea>
+        <button
+          className="send-btn"
+          type="submit"
+          value="send"
+          onClick={SubmitHandler}
+        >
+          Ask
+        </button>
       </div>
     </div>
   );

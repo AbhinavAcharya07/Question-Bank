@@ -6,9 +6,10 @@
 }
 .PayloadContainer {
   border: 1px solid rgb(63, 62, 62);
-  margin: 8px;
+  margin: 5%;
   border-radius: 8px;
   height: 80%;
+  width: 90%;
   overflow-y: scroll;
   scrollbar-width: none;
   background-color: #f7f7f7;
