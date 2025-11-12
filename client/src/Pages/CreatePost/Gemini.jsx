@@ -39,10 +39,10 @@ const Gemini = () => {
   };
   return (
     <div className="Gemini">
+      <div className="PayloadQn">
+        <p>{PayloadQn}</p>
+      </div>
       <div className="PayloadContainer">
-        <div className="PayloadQn">
-          <p>{PayloadQn}</p>
-        </div>
         <p>{Answer}</p>
       </div>
       <div className="InputWrapper">
