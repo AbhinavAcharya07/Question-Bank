@@ -1,7 +1,7 @@
 import React from "react";
 import "./Gemini.css";
-import { useState, useEffect } from "react";
-import { GoogleGenAI } from "@google/genai";
+import { useState } from "react";
+import OpenAI from "openai";
 import "./AiSearchShimmer.css";
 
 const Gemini = () => {
@@ -10,19 +10,27 @@ const Gemini = () => {
   const [PayloadQn, setPayloadQn] = useState(null);
   const [IsLoading, setIsLoading] = useState(false);
   //   const PayloadQn
-  const apiKey = "AIzaSyAjkxaO08jfNnTGNDr3CZ14Ce-tXqRgrhQ";
-  const ai = new GoogleGenAI({
-    apiKey: apiKey,
+  const openai = new OpenAI({
+    apiKey:
+      "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",
+    dangerouslyAllowBrowser: true,
   });
+
   const main = async (question) => {
     setIsLoading(true);
     try {
-      const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: [question],
+      const response = openai.responses.create({
+        model: "gpt-5-nano",
+        input: [
+          {
+            role: "user",
+            content: [{ type: "input_text", text: question }],
+          },
+        ],
+        store: true,
       });
-      setAnswer(response.text);
-      console.log(response.text);
+
+      response.then((result) => setAnswer(result.output_text));
     } catch (error) {
       console.error("API Error:", error);
       setAnswer("Sorry, I encountered an error while fetching the response.");
@@ -57,7 +65,7 @@ const Gemini = () => {
         <textarea
           name=""
           className="dynamicTextArea"
-          placeholder="Gemini"
+          placeholder="ChatGPT"
           onChange={(event) => {
             setAskquestion(event.target.value);
           }}
