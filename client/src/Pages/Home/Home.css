@@ -6,6 +6,7 @@
   text-align: center;
   background-color: white;
   color: black;
+  padding: 20px;
 }
 .Main-Blk {
   display: flex;
@@ -15,6 +16,7 @@
   text-align: center;
   background-color: black;
   color: white;
+  padding: 20px;
 }
 .card-grid {
   display: grid;

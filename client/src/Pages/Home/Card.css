@@ -1,4 +1,4 @@
-.card {
+.card-Wte {
   /* background-color: rgba(
     255,
     255,
@@ -11,6 +11,16 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: left;
   color: black;
+  min-height: 300px;
+  min-width: 500px;
+}
+.card-Blk {
+  background-color: rgb(50, 50, 50);
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: left;
+  color: white;
   min-height: 300px;
   min-width: 500px;
 }
