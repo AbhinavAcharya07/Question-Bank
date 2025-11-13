@@ -1,12 +1,15 @@
 import React from "react";
 import "./Card.css";
+import { ModeSwitcher } from "../../contextProvider";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 const Card = ({ post }) => {
+  const { color } = useContext(ModeSwitcher);
   const navigate = useNavigate();
 
   return (
     <div
-      className="card"
+      className={color === "white" ? "card-Wte" : "card-Blk"}
       onClick={() => {
         navigate(`/singlepost/${post?._id}`);
       }}
