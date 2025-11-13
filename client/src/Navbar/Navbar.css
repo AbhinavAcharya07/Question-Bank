@@ -5,7 +5,8 @@
   padding: 10px 20px;
   padding: min(1.25rem, 5%) max(7%, 5%, 2%);
   margin: auto;
-  border-bottom: 1px solid rgb(31, 8, 48);
+  border-bottom: 1px solid rgb(171, 118, 83);
+  background-color: rgb(240, 243, 213);
 }
 .gridLeft {
   display: flex;
