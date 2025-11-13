@@ -1,21 +1,30 @@
-.Main {
+.Main-Wte {
   display: flex;
   flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: black;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+.Main-Blk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  color: white;
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   /* aspect-ratio: 1/1; */
   gap: 20px; /* Space between the cards */
-    min-height:300px;
-    max-width: 1000px;
-    margin: 20px 0px;
-    
+  min-height: 300px;
+  max-width: 1000px;
+  margin: 20px 0px;
 }
-.card-skelton{
+.card-skelton {
   background-color: #ccc;
 }
