@@ -1,17 +1,28 @@
 .NavBar {
   width: 100vw;
-  /* height: calc(100% - 93%); */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* padding: calc(100% - 99%) calc(100% - 99%); */
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
   padding: 10px 20px;
   padding: min(1.25rem, 5%) max(7%, 5%, 2%);
   margin: auto;
   border-bottom: 1px solid rgb(31, 8, 48);
 }
+.gridLeft {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.gridMiddle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gridRight {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
 .NavBar1 {
-  /* margin-left: 10px; */
   display: flex;
   gap: 10px;
 }
@@ -23,7 +34,6 @@ ul {
   display: flex;
   gap: 30px;
   justify-content: center;
-  /* list-style-type: none; */
 }
 a {
   margin-top: 5px;
@@ -34,21 +44,4 @@ a {
   justify-content: center;
   align-items: center;
   color: black;
-}
-.form {
-  display: flex;
-  justify-content: center;
-  /* width: 100%; */
-}
-#Search {
-  height: 30px;
-  width: 200px;
-  margin: 0 5px 0 0;
-  padding: 5px;
-}
-#Searchbtn {
-  height: 30px;
-  width: 50px;
-  margin: 0 5px 0 0;
-  cursor: pointer;
 }
