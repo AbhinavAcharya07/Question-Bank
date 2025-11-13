@@ -7,12 +7,25 @@
   max-width: 1000px;
   margin: 20px 0px;
 }
-.skeletonCard {
+.skeletonCard-Wte {
   background-color: rgb(
     184,
     168,
     168,
     0.7
+  ); /* Slightly transparent white for the cards */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: left;
+  color: black;
+  min-height: 300px;
+}
+.skeletonCard-Blk {
+  background-color: rgb(
+    50,
+    50,
+    50
   ); /* Slightly transparent white for the cards */
   padding: 20px;
   border-radius: 8px; /* Rounded corners */
