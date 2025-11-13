@@ -1,9 +1,12 @@
 import React from "react";
 import "./SinglePost.css";
+import { ModeSwitcher } from "../../contextProvider";
+import { useContext } from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 const SinglePost = () => {
+  const { color } = useContext(ModeSwitcher);
   const { postId } = useParams();
   console.log(postId);
   const [post, setpost] = useState();
@@ -40,11 +43,27 @@ const SinglePost = () => {
     }
   };
   return (
-    <div className="singlePost-Container">
-      <div className="singlePost-Card">
+    <div
+      className={
+        color === "white"
+          ? "singlePostContainer-Wte"
+          : "singlePostContainer-Blk"
+      }
+    >
+      <div
+        className={
+          color === "white" ? "singlePostCard-Wte" : "singlePostCard-Blk"
+        }
+      >
         <h1>{post?.topic}</h1>
         <h2>{post?.question}</h2>
-        <p>{post?.answer}</p>
+        <p
+          className={
+            color === "white" ? "singlePostCardP-Wte" : "singlePostCardP-Blk"
+          }
+        >
+          {post?.answer}
+        </p>
         <div className="buttons">
           <button id="deletebtn" onClick={deletePost}>
             Delete
