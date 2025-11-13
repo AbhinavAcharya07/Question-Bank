@@ -1,11 +1,14 @@
 import React from "react";
 import "./CreatePost.css";
+import { ModeSwitcher } from "../../contextProvider";
+import { useContext } from "react";
 import Gemini from "./Gemini";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 const CreatePost = () => {
+  const { color } = useContext(ModeSwitcher);
   const [topic, setTopic] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -65,16 +68,16 @@ const CreatePost = () => {
     console.log(response);
   };
   return (
-    <div className="CreatePost">
-      <div className="LeftSide">
+    <div className={color === "white" ? "CreatePost-Wte" : "CreatePost-Blk"}>
+      <div className={color === "white" ? "LeftSide-Wte" : "LeftSide-Blk"}>
         <Gemini className="Gemini"></Gemini>
       </div>
-      <div className="Post">
+      <div className={color === "white" ? "Post-Wte" : "Post-Blk"}>
         <h1>Create Post</h1>
         <form className="form" onSubmit={handleSubmit}>
           <input
             type="text"
-            className="topic"
+            className={color === "white" ? "topic-Wte" : "topic-Blk"}
             placeholder="Topic"
             value={topic}
             onChange={(e) => {
@@ -83,7 +86,7 @@ const CreatePost = () => {
           />
           <input
             type="text"
-            className="question"
+            className={color === "white" ? "question-Wte" : "question-Blk"}
             placeholder="Question"
             value={question}
             onChange={(e) => {
@@ -91,7 +94,7 @@ const CreatePost = () => {
             }}
           />
           <textarea
-            className="answer"
+            className={color === "white" ? "answer-Wte" : "answer-Blk"}
             rows="5"
             placeholder="Answer"
             value={answer}
@@ -100,13 +103,17 @@ const CreatePost = () => {
             }}
           ></textarea>
           <div>
-            <button type="submit" value="Send" className="submitWhite">
+            <button
+              type="submit"
+              value="Send"
+              className={color === "white" ? "submitWhite" : "submitBlack"}
+            >
               {postId ? "Update" : "Submit"}
             </button>
           </div>
         </form>
       </div>
-      <div className="RightSide">
+      <div className={color === "white" ? "RightSide-Wte" : "RightSide-Blk"}>
         <Gemini className="Gemini"></Gemini>
       </div>
     </div>
