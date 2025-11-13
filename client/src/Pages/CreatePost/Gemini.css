@@ -1,4 +1,7 @@
-.Gemini {
+.Gemini-Wte {
+  border: 1px solid rgb(31, 8, 48);
+  border-radius: 10px;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -7,7 +10,22 @@
   background-color: white;
   position: relative;
 }
+.Gemini-Blk {
+  border: 1px solid rgb(31, 8, 48);
+  border-radius: 10px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  background-color: rgba(50, 50, 50);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(50, 50, 50);
+  position: relative;
+}
 .PayloadContainer {
+  visibility: hidden;
+}
+.PayloadContainer-Wte {
   /* border: 1px solid rgb(63, 62, 62); */
   margin: 2.5% 5%;
   border-radius: 8px;
@@ -18,8 +36,25 @@
   background-color: hsl(200, 20%, 95%);
   position: absolute;
   top: 10%;
+  color: black;
+}
+.PayloadContainer-Blk {
+  /* border: 1px solid rgb(63, 62, 62); */
+  margin: 2.5% 5%;
+  border-radius: 8px;
+  height: 70%;
+  width: 90%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  background-color: rgba(75, 75, 75);
+  position: absolute;
+  top: 10%;
+  color: white;
 }
 .PayloadQn {
+  visibility: hidden;
+}
+.PayloadQn-Wte {
   background-color: hsl(200, 20%, 95%);
   margin: 5%;
   width: 50%;
@@ -30,14 +65,31 @@
   overflow-y: scroll;
   scrollbar-width: none;
 }
+.PayloadQn-Blk {
+  background-color: rgba(75, 75, 75);
+  /* background-color: hsl(200, 20%, 95%); */
+  margin: 5%;
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  position: absolute;
+  right: 1%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
 
-.Gemini p {
+.Answer-Wte {
   font-size: medium;
   padding: 8px 8px;
   /* overflow: auto; */
+  color: black;
 }
-
-.InputWrapper {
+.Answer-Blk {
+  font-size: medium;
+  padding: 8px 8px;
+  color: white;
+}
+.InputWrapper-Wte {
   position: absolute;
   right: 5%;
   bottom: 2%;
@@ -49,6 +101,20 @@
   padding: 8px 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
+  z-index: 10;
+}
+.InputWrapper-Blk {
+  position: absolute;
+  right: 5%;
+  bottom: 2%;
+  display: flex;
+  align-items: flex-end;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 25px;
+  padding: 8px 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgb(75, 75, 75);
   z-index: 10;
 }
 .dynamicTextArea {
@@ -76,7 +142,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: bold;
   line-height: 1;
   transition: opacity 0.2s;

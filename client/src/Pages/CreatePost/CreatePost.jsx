@@ -70,7 +70,7 @@ const CreatePost = () => {
   return (
     <div className={color === "white" ? "CreatePost-Wte" : "CreatePost-Blk"}>
       <div className={color === "white" ? "LeftSide-Wte" : "LeftSide-Blk"}>
-        <Gemini className="Gemini"></Gemini>
+        <Gemini className="GeminiMain"></Gemini>
       </div>
       <div className={color === "white" ? "Post-Wte" : "Post-Blk"}>
         <h1>Create Post</h1>
