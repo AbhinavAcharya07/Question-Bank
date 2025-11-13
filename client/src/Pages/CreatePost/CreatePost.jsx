@@ -4,7 +4,7 @@ import Gemini from "./Gemini";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import Chatgpt from "./Chatgpt";
+
 const CreatePost = () => {
   const [topic, setTopic] = useState("");
   const [question, setQuestion] = useState("");
@@ -107,7 +107,7 @@ const CreatePost = () => {
         </form>
       </div>
       <div className="RightSide">
-        <Chatgpt></Chatgpt>
+        <Gemini className="Gemini"></Gemini>
       </div>
     </div>
   );

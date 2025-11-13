@@ -10,7 +10,7 @@ const Gemini = () => {
   const [PayloadQn, setPayloadQn] = useState(null);
   const [IsLoading, setIsLoading] = useState(false);
   //   const PayloadQn
-  const apiKey = "AIzaSyAjkxaO08jfNnTGNDr3CZ14Ce-tXqRgrhQ";
+  const apiKey = import.meta.env.VITE_SECRET;
   const ai = new GoogleGenAI({
     apiKey: apiKey,
   });
