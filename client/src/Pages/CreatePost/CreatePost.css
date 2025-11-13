@@ -1,68 +1,69 @@
-.CreatePost{
-    width: 100vw;
- display: grid;
- grid-template-columns: 0.8fr 1.4fr 0.8fr ;
- 
+.CreatePost {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.8fr;
 }
-.LeftSide{
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 0px;
-    margin-bottom: 20px;
+.LeftSide {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 0px;
+  margin-bottom: 20px;
 }
-.RightSide{
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 0px;
-    margin-bottom: 20px;
+.RightSide {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 0px;
+  margin-bottom: 20px;
 }
-.Gemini{
-    border: 1px solid rgb(31, 8, 48) ;
-    border-radius: 10px;
-    height: 80vh;
+.Gemini {
+  border: 1px solid rgb(31, 8, 48);
+  border-radius: 10px;
+  height: 80vh;
 }
-.Post{
-overflow: hidden;
-/* width: 100vw; */
-max-width: 80%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-margin: 10px auto;
+.Post {
+  overflow: hidden;
+  /* width: 100vw; */
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px auto;
 }
-.Post form{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-width: 80vw;
-max-width: 60rem;
-padding: 20px;
+.Post form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80vw;
+  max-width: 60rem;
+  padding: 20px;
 }
-.topic,.question,.answer{
-    font-size: medium;
-    height: auto;
-    width: 100%;
-    max-width: 30rem;
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
-    color: black;
-    border: none;
-    border-radius: 0.6rem;
-    background: rgb(184, 168, 168);
+.topic,
+.question,
+.answer {
+  font-size: medium;
+  height: auto;
+  width: 100%;
+  max-width: 30rem;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: black;
+  border: none;
+  border-radius: 0.6rem;
+  background: rgb(184, 168, 168);
 }
-.submitWhite{
-cursor: pointer;
-height: 50px;
-width: 120px;
-font-size: 25px;
-font-weight: 650;
-padding: 5px 10px;
-border: none;
-border-radius: 1.25rem;
-margin: 12px;
-background: rgb(184, 168, 168);
+.submitWhite {
+  cursor: pointer;
+  height: 50px;
+  width: 120px;
+  font-size: 25px;
+  font-weight: 650;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 1.25rem;
+  margin: 12px;
+  background: rgb(184, 168, 168);
 }
