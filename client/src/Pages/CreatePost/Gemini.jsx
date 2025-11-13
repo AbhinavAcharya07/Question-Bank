@@ -1,15 +1,50 @@
 import React from "react";
+import { ModeSwitcher } from "../../contextProvider";
+import { useContext } from "react";
 import "./Gemini.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { GoogleGenAI } from "@google/genai";
 import "./AiSearchShimmer.css";
 
 const Gemini = () => {
+  const { color } = useContext(ModeSwitcher);
   const [Askquestion, setAskquestion] = useState("");
   const [Answer, setAnswer] = useState(null);
   const [PayloadQn, setPayloadQn] = useState(null);
   const [IsLoading, setIsLoading] = useState(false);
   //   const PayloadQn
+  const display1 = () => {
+    if (IsLoading && PayloadQn) {
+      return "PayloadContainerShimmer-Wte";
+    } else if (!IsLoading && !PayloadQn) {
+      return "PayloadContainer";
+    } else {
+      return "PayloadContainer-Wte";
+    }
+  };
+  const display2 = () => {
+    if (IsLoading && PayloadQn) {
+      return "PayloadContainerShimmer-Blk";
+    } else if (!IsLoading && !PayloadQn) {
+      return "PayloadContainer";
+    } else {
+      return "PayloadContainer-Blk";
+    }
+  };
+  const displayAnswer1 = () => {
+    if (PayloadQn) {
+      return "PayloadQn-Wte";
+    } else {
+      return "PayloadQn";
+    }
+  };
+  const displayAnswer2 = () => {
+    if (PayloadQn) {
+      return "PayloadQn-Blk";
+    } else {
+      return "PayloadQn";
+    }
+  };
   const apiKey = import.meta.env.VITE_SECRET;
   const ai = new GoogleGenAI({
     apiKey: apiKey,
@@ -44,16 +79,24 @@ const Gemini = () => {
     main(trimmedQuestion);
   };
   return (
-    <div className="Gemini">
-      <div className="PayloadQn">
-        <p>{PayloadQn}</p>
+    <div className={color === "white" ? "Gemini-Wte" : "Gemini-Blk"}>
+      <div className={color === "white" ? displayAnswer1() : displayAnswer2()}>
+        <p className={color === "white" ? "Answer-Wte" : "Answer-Blk"}>
+          {PayloadQn}
+        </p>
       </div>
       <div
-        className={IsLoading ? "PayloadContainerShimmer" : "PayloadContainer"}
+        className={color === "white" ? display1() : display2()}
+        // className="PayloadContainer"
+        // id="PayloadContainer"
       >
-        <p>{Answer}</p>
+        <p className={color === "white" ? "Answer-Wte" : "Answer-Blk"}>
+          {Answer}
+        </p>
       </div>
-      <div className="InputWrapper">
+      <div
+        className={color === "white" ? "InputWrapper-Wte" : "InputWrapper-Blk"}
+      >
         <textarea
           name=""
           className="dynamicTextArea"
