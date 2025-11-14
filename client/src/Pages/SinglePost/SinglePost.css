@@ -21,11 +21,10 @@
   background-color: black;
 }
 .singlePostCard-Wte {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.7
+  background-color: rgb(
+    184,
+    168,
+    168
   ); /* Slightly transparent white for the cards */
   padding: 20px;
   border-radius: 8px; /* Rounded corners */
@@ -67,10 +66,12 @@
   height: 30px;
   margin: auto 5px;
   cursor: pointer;
+  /* font-weight: 400; */
 }
 #editbtn {
   width: 60px;
   height: 30px;
   margin: auto 5px;
   cursor: pointer;
+  /* font-weight: 400; */
 }
