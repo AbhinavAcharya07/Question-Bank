@@ -14,11 +14,11 @@ const CreatePost = () => {
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
   const { postId } = useParams();
-
+  const BackEndUrl = import.meta.env.VITE_BACKEND;
   const getPost = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8001/api/getsinglepost?postId=${postId}`
+        `${BackEndUrl}/getsinglepost?postId=${postId}`
       );
       const post = response.data.responseData;
       setTopic(post?.topic);
@@ -36,27 +36,21 @@ const CreatePost = () => {
     try {
       e.preventDefault();
       if (postId) {
-        const response = await axios.put(
-          "http://localhost:8001/api/updatepost",
-          {
-            postId,
-            topic,
-            question,
-            answer,
-          }
-        );
+        const response = await axios.put(`${BackEndUrl}/updatepost`, {
+          postId,
+          topic,
+          question,
+          answer,
+        });
         if (response?.data.responseData) {
           navigate(`/singlepost/${postId}`);
         }
       } else {
-        const response = await axios.post(
-          "http://localhost:8001/api/createpost",
-          {
-            topic,
-            question,
-            answer,
-          }
-        );
+        const response = await axios.post(`${BackEndUrl}/createpost`, {
+          topic,
+          question,
+          answer,
+        });
         if (response?.data.responseData) {
           navigate("/");
         }

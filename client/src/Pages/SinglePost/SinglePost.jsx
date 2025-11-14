@@ -11,11 +11,12 @@ const SinglePost = () => {
   console.log(postId);
   const [post, setpost] = useState();
   const navigate = useNavigate();
+  const BackEndUrl = import.meta.env.VITE_BACKEND;
 
   const getPost = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8001/api/getsinglepost?postId=${postId}`
+        `${BackEndUrl}/getsinglepost?postId=${postId}`
       );
       setpost(response.data.responseData);
     } catch (error) {
@@ -27,14 +28,11 @@ const SinglePost = () => {
   }, []);
   const deletePost = async () => {
     try {
-      const response = await axios.delete(
-        "http://localhost:8001/api/deletepost?postId",
-        {
-          data: {
-            postId,
-          },
-        }
-      );
+      const response = await axios.delete(`${BackEndUrl}/deletepost?postId`, {
+        data: {
+          postId,
+        },
+      });
       if (response.data.responseData) {
         navigate("/");
       }
