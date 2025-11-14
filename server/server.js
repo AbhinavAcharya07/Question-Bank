@@ -10,7 +10,7 @@ import cors from "cors";
 const app = express();
 connectionWithMongoose();
 app.use(cors({
-    origin:["http://localhost:5174"],
+    origin:["http://localhost:5174","https://question-bank-vxoj.vercel.app/"],
 }));
 app.use(express.json());
 app.use('/api',CreatePost);
