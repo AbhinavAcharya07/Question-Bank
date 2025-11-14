@@ -66,6 +66,7 @@
   height: 30px;
   margin: auto 5px;
   cursor: pointer;
+  background-color: rgb(201, 45, 17);
   /* font-weight: 400; */
 }
 #editbtn {
@@ -73,5 +74,6 @@
   height: 30px;
   margin: auto 5px;
   cursor: pointer;
+  background-color: rgb(40, 202, 151);
   /* font-weight: 400; */
 }

@@ -59,7 +59,7 @@ const CreatePost = () => {
       console.log(error);
     }
 
-    console.log(response);
+    // console.log(response);
   };
   return (
     <div className={color === "white" ? "CreatePost-Wte" : "CreatePost-Blk"}>
