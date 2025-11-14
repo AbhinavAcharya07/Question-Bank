@@ -9,9 +9,10 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const { color } = useContext(ModeSwitcher);
   const [posts, setposts] = useState([]);
+  const BackEndUrl = import.meta.env.VITE_BACKEND;
   const getPost = async () => {
     try {
-      const response = await axios.get("http://localhost:8001/api/getallposts");
+      const response = await axios.get(`${BackEndUrl}/getallposts`);
       setposts(response.data.responseData);
     } catch (error) {
       console.log(error);
