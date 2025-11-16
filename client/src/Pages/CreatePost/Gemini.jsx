@@ -55,6 +55,10 @@ const Gemini = () => {
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: [question],
+        config: {
+          systemInstruction:
+            "You are a helpful AI assistant. You provide accurate and comprehensive definition. Your response MUST be a single, cohesive paragraph of exactly 4 to 5 lines and with examples of exactly 2-3 lines in another paragraph. Do not use lists or subheadings.",
+        },
       });
       setAnswer(response.text);
       console.log(response.text);
