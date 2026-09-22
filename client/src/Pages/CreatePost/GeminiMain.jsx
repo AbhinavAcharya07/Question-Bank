@@ -9,7 +9,9 @@ const GeminiMain = () => {
   const [PayloadQn, setPayloadQn] = useState(null);
   const [IsLoading, setIsLoading] = useState(false);
 
-  const apiKey = "AIzaSyAjkxaO08jfNnTGNDr3CZ14Ce-tXqRgrhQ"; // don't hardcode in production
+ const apiKey = import.meta.env.VITE_SECRET;
+  console.log("KEY VALUE:", apiKey); // TEMP - remove after debugging
+  console.log("KEY TYPE:", typeof apiKey); // TEMP - remove after debugging// don't hardcode in production
   const genAI = new GoogleGenAI(apiKey);
   const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
