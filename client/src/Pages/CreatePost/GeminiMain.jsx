@@ -3,26 +3,24 @@ import "./Gemini.css";
 import "./AiSearchShimmer.css";
 import { GoogleGenAI } from "@google/genai";
 
+const apiKey = import.meta.env.VITE_SECRET;
+const ai = new GoogleGenAI({ apiKey: apiKey });
+
 const GeminiMain = () => {
   const [Askquestion, setAskquestion] = useState("");
   const [Answer, setAnswer] = useState(null);
   const [PayloadQn, setPayloadQn] = useState(null);
   const [IsLoading, setIsLoading] = useState(false);
 
- const apiKey = import.meta.env.VITE_SECRET;
-  console.log("KEY VALUE:", apiKey); // TEMP - remove after debugging
-  console.log("KEY TYPE:", typeof apiKey); // TEMP - remove after debugging// don't hardcode in production
-  const genAI = new GoogleGenAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-
   const main = async (question) => {
     setIsLoading(true);
     try {
-      const result = await model.generateContent(question);
-      const response = await result.response;
-      const text = await response.text();
-      setAnswer(text);
-      console.log(text);
+      const response = await ai.models.generateContent({
+        model: "gemini-2.0-flash",
+        contents: [question],
+      });
+      setAnswer(response.text);
+      console.log(response.text);
     } catch (error) {
       console.error("API Error:", error);
       setAnswer("Sorry, I encountered an error while fetching the response.");
@@ -36,6 +34,7 @@ const GeminiMain = () => {
     if (!trimmedQuestion) return;
 
     setPayloadQn(trimmedQuestion);
+    setAskquestion("");
     setAnswer(null);
     main(trimmedQuestion);
   };
