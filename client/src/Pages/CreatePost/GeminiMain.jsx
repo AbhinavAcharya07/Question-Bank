@@ -9,18 +9,18 @@ const GeminiMain = () => {
   const [PayloadQn, setPayloadQn] = useState(null);
   const [IsLoading, setIsLoading] = useState(false);
 
-  const apiKey = "AIzaSyAjkxaO08jfNnTGNDr3CZ14Ce-tXqRgrhQ"; // don't hardcode in production
-  const genAI = new GoogleGenAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+  const apiKey = import.meta.env.VITE_SECRET; // reads from your .env file, not hardcoded
+  const ai = new GoogleGenAI({ apiKey: apiKey });
 
   const main = async (question) => {
     setIsLoading(true);
     try {
-      const result = await model.generateContent(question);
-      const response = await result.response;
-      const text = await response.text();
-      setAnswer(text);
-      console.log(text);
+      const response = await ai.models.generateContent({
+        model: "gemini-2.0-flash",
+        contents: [question],
+      });
+      setAnswer(response.text);
+      console.log(response.text);
     } catch (error) {
       console.error("API Error:", error);
       setAnswer("Sorry, I encountered an error while fetching the response.");
@@ -34,6 +34,7 @@ const GeminiMain = () => {
     if (!trimmedQuestion) return;
 
     setPayloadQn(trimmedQuestion);
+    setAskquestion("");
     setAnswer(null);
     main(trimmedQuestion);
   };
