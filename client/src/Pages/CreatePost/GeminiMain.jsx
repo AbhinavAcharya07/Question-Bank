@@ -10,8 +10,8 @@ const GeminiMain = () => {
   const [IsLoading, setIsLoading] = useState(false);
 
   const apiKey = import.meta.env.VITE_SECRET;
-console.log("KEY VALUE:", apiKey); // TEMP - remove after debugging
-console.log("KEY TYPE:", typeof apiKey); // TEMP - remove after debugging
+  console.log("KEY VALUE:", apiKey); // TEMP - remove after debugging
+  console.log("KEY TYPE:", typeof apiKey); // TEMP - remove after debugging
   const ai = new GoogleGenAI({ apiKey: apiKey });
 
   const main = async (question) => {
